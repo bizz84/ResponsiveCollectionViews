@@ -20,11 +20,3 @@ DerivedData
 Pods
 # emacs
 *~
-# Fastlane screenshots
-screenshots
-# Fastlane metadata
-Preview.html
-# 3rd party frameworks
-Crashlytics.framework/
-Fabric.framework/
-GoogleMobileAds.framework/
