@@ -1,0 +1,3 @@
+[submodule "submodules/demo-photos"]
+	path = submodules/demo-photos
+	url = https://bitbucket.org/bizz84/castplayer-ios-preload-assets
