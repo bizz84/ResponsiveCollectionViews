@@ -48,16 +48,13 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
         
         if segue.identifier == AssetCollectionSegueIdentifier {
             
-            if let indexPath = sender as? NSIndexPath {
+            if let indexPath = sender as? NSIndexPath, let destinationVC = segue.destinationViewController as? AssetCollectionViewController {
+                    
+                let albumName = albumNames[indexPath.row]
+                let album = albums[albumName]!
                 
-                if let destinationVC = segue.destinationViewController as? AssetCollectionViewController {
-                    
-                    let albumName = albumNames[indexPath.row]
-                    let album = albums[albumName]!
-                    
-                    destinationVC.title = albumName
-                    destinationVC.albumPhotoFileNames = album
-                }
+                destinationVC.title = albumName
+                destinationVC.albumPhotoFileNames = album
             }
         }
     }

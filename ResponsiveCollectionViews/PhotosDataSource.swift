@@ -68,8 +68,6 @@ class PhotosDataSource {
             }
         }
         self.albums = albums
-        
-        print("\(albums)")
     }
     
     class func insert(photoFileName photoFileName: String, inout inAlbums albums: [ String: [String] ], albumName: String) {
