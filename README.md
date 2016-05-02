@@ -16,14 +16,14 @@ This demo project shows how to build the skeleton of a simple Photos app using c
 <img src="screenshots/iPad-MasterPortrait.jpg" alt="iPad Master Portrait"/>
 <img src="screenshots/iPad-MasterLandscape.jpg" alt="iPad Master Landscape"/>
 
-<img src="screenshots/iPad-MasterPotraitSplitRight.jpg" alt="iPad Master Portrait Split Right"/>
+<img src="screenshots/iPad-MasterPortraitSplitRight.jpg" alt="iPad Master Portrait Split Right"/>
 <img src="screenshots/iPad-MasterLandscapeSplitRight.jpg" alt="iPad Master Landscape Split Right"/>
 <img src="screenshots/iPad-MasterLandscapeSplitMiddle.jpg" alt="iPad Master Landscape Split Middle"/>
 
 <img src="screenshots/iPad-DetailPortrait.jpg" alt="iPad Detail Portrait"/>
 <img src="screenshots/iPad-DetailLandscape.jpg" alt="iPad Detail Landscape"/>
 
-<img src="screenshots/iPad-DetailPotraitSplitRight.jpg" alt="iPad Detail Portrait Split Right"/>
+<img src="screenshots/iPad-DetailPortraitSplitRight.jpg" alt="iPad Detail Portrait Split Right"/>
 <img src="screenshots/iPad-DetailLandscapeSplitRight.jpg" alt="iPad Detail Landscape Split Right"/>
 <img src="screenshots/iPad-DetailLandscapeSplitMiddle.jpg" alt="iPad Detail Landscape Split Middle"/>
 
