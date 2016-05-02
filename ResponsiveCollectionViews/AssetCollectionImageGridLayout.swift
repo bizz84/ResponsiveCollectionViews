@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ImageGridLayout {
+struct AssetCollectionImageGridLayout {
 
     let spacingBetweenCells: CGFloat
     
@@ -16,26 +16,15 @@ struct ImageGridLayout {
     
     let cellsPerRow: Int
     
-    let sizeClass: AlbumsCollectionSizeClass
-    
-    init(sizeClass: AlbumsCollectionSizeClass, gridWidth: CGFloat, desiredCellSize: CGFloat) {
-        
-        self.sizeClass = sizeClass
-
+    init(sizeClass: AlbumsCollectionSizeClass, edgeInsets: UIEdgeInsets, gridWidth: CGFloat, desiredCellSize: CGFloat) {
+  
         spacingBetweenCells = sizeClass == .Regular ? 20.0 : 1.0
         
-        let contentInset = ImageGridLayout.contentInset(sizeClass: sizeClass)
-
-        let availableGridWidth = gridWidth - contentInset.left - contentInset.right
+        let availableGridWidth = gridWidth - edgeInsets.left - edgeInsets.right
         cellsPerRow = Int(round(availableGridWidth / desiredCellSize))
 
         let gridWidthMinusSpacing = availableGridWidth - spacingBetweenCells * CGFloat(cellsPerRow - 1)
         
         squareCellSize = floor(gridWidthMinusSpacing / CGFloat(cellsPerRow))
     }
-    
-    static func contentInset(sizeClass sizeClass: AlbumsCollectionSizeClass) -> UIEdgeInsets {
-        return sizeClass == .Regular ? UIEdgeInsetsMake(15, 15, 15, 15) : UIEdgeInsetsZero
-    }
 }
-

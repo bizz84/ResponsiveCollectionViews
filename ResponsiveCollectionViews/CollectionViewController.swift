@@ -26,7 +26,7 @@ class CollectionViewController: UIViewController {
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         if previousTraitCollection != nil {
-            
+
             collectionView.reloadData()
         }
         super.traitCollectionDidChange(previousTraitCollection)
@@ -36,11 +36,5 @@ class CollectionViewController: UIViewController {
             self.currentIndexPath = nil
         }
         collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        collectionView.reloadData()
     }
 }

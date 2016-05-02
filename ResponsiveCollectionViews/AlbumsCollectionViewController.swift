@@ -19,12 +19,6 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
     lazy var albumNames: [String] = {
         return Array(self.albums.keys).sort() { $0 < $1 }
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        updateSizeClassesLayout()
-    }
     
     func updateSizeClassesLayout() {
         let gridWidth = ApplicationWindowSize.windowSize.width
@@ -68,7 +62,6 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
         }
     }
 
-
     private func updateCell(cell: AlbumCollectionViewCell, indexPath: NSIndexPath) {
         
         let albumName = albumNames[indexPath.row]
@@ -81,9 +74,6 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
         if let firstPhotoName = album.first {
             
             cell.image = UIImage(named: firstPhotoName)
-//            if let bundlePath = NSBundle.mainBundle().pathForResource(firstPhotoName, ofType: "jpg") {
-//                cell.image = UIImage(contentsOfFile: bundlePath)
-//            }
         }
     }
     

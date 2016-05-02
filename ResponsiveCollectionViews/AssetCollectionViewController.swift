@@ -20,11 +20,11 @@ class AssetCollectionViewController: CollectionViewController, UICollectionViewD
     }
     
     func updateSizeClassesLayout() {
-        let sizeClass = AlbumsCollectionSizeClass(traitCollection: self.traitCollection)
         let gridWidth = ApplicationWindowSize.windowSize.width
+        let sizeClass = AlbumsCollectionSizeClass(traitCollection: self.traitCollection)
         flowLayout = AssetCollectionFlowLayout(gridWidth: gridWidth, sizeClass: sizeClass)
         if let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.sectionInset = ImageGridLayout.contentInset(sizeClass: sizeClass)
+            collectionViewLayout.sectionInset = flowLayout.edgeInsets
         }
     }
     

@@ -16,13 +16,16 @@ class AssetCollectionFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
     }
     
     let sizeClass: AlbumsCollectionSizeClass
+    
+    let edgeInsets: UIEdgeInsets
 
-    let imageGridLayout: ImageGridLayout
+    let imageGridLayout: AssetCollectionImageGridLayout
     
     init(gridWidth: CGFloat, sizeClass: AlbumsCollectionSizeClass) {
         self.sizeClass = sizeClass
+        self.edgeInsets = sizeClass == .Regular ? UIEdgeInsetsMake(15, 15, 15, 15) : UIEdgeInsetsZero
         let desiredCellSize: CGFloat = sizeClass == .Regular ? 145.0 : 100.0
-        imageGridLayout = ImageGridLayout(sizeClass: sizeClass, gridWidth: gridWidth, desiredCellSize: desiredCellSize)
+        imageGridLayout = AssetCollectionImageGridLayout(sizeClass: sizeClass, edgeInsets: edgeInsets, gridWidth: gridWidth, desiredCellSize: desiredCellSize)
     }
     
     // MARK: Grid Layout
@@ -40,5 +43,4 @@ class AssetCollectionFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
         
         return imageGridLayout.spacingBetweenCells
     }
-
 }

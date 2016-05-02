@@ -21,7 +21,7 @@
 		651A711D1CD40818000B4091 /* ApplicationWindowSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A711C1CD40818000B4091 /* ApplicationWindowSize.swift */; };
 		651A711F1CD4084D000B4091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A711E1CD4084D000B4091 /* CollectionViewController.swift */; };
 		651A71211CD40896000B4091 /* CGSize+Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A71201CD40896000B4091 /* CGSize+Square.swift */; };
-		651A71231CD408B0000B4091 /* ImageGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A71221CD408B0000B4091 /* ImageGridLayout.swift */; };
+		651A71231CD408B0000B4091 /* AssetCollectionImageGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A71221CD408B0000B4091 /* AssetCollectionImageGridLayout.swift */; };
 		65C7079A1CD78EF40013C43F /* PhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C707991CD78EF40013C43F /* PhotosDataSource.swift */; };
 		65C7081E1CD7BDC50013C43F /* contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 65C707F51CD7BDC50013C43F /* contents.json */; };
 		65C7081F1CD7BDC50013C43F /* 48URC0M7Y2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65C707F71CD7BDC50013C43F /* 48URC0M7Y2.jpg */; };
@@ -79,7 +79,7 @@
 		651A711C1CD40818000B4091 /* ApplicationWindowSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationWindowSize.swift; path = "../../../musevisions-trunk-ios/apps/CastPlayer/CastPlayer/Classes/Utilities/ApplicationWindowSize.swift"; sourceTree = "<group>"; };
 		651A711E1CD4084D000B4091 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		651A71201CD40896000B4091 /* CGSize+Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Square.swift"; sourceTree = "<group>"; };
-		651A71221CD408B0000B4091 /* ImageGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGridLayout.swift; sourceTree = "<group>"; };
+		651A71221CD408B0000B4091 /* AssetCollectionImageGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionImageGridLayout.swift; sourceTree = "<group>"; };
 		65C707991CD78EF40013C43F /* PhotosDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDataSource.swift; sourceTree = "<group>"; };
 		65C707F51CD7BDC50013C43F /* contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contents.json; sourceTree = "<group>"; };
 		65C707F71CD7BDC50013C43F /* 48URC0M7Y2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 48URC0M7Y2.jpg; sourceTree = "<group>"; };
@@ -160,9 +160,9 @@
 				651A71161CD40722000B4091 /* AssetCollectionViewController.swift */,
 				651A71181CD4077B000B4091 /* AssetCollectionViewCell.swift */,
 				651A711A1CD407E1000B4091 /* AssetCollectionFlowLayout.swift */,
+				651A71221CD408B0000B4091 /* AssetCollectionImageGridLayout.swift */,
 				651A711C1CD40818000B4091 /* ApplicationWindowSize.swift */,
 				651A70FC1CD404EB000B4091 /* AppDelegate.swift */,
-				651A71221CD408B0000B4091 /* ImageGridLayout.swift */,
 				651A71201CD40896000B4091 /* CGSize+Square.swift */,
 				651A71001CD404EB000B4091 /* Main.storyboard */,
 				651A71031CD404EB000B4091 /* Assets.xcassets */,
@@ -359,7 +359,7 @@
 				651A70FD1CD404EB000B4091 /* AppDelegate.swift in Sources */,
 				651A71151CD406D8000B4091 /* AlbumsCollectionFlowLayout.swift in Sources */,
 				651A710F1CD405EB000B4091 /* AlbumsCollectionViewController.swift in Sources */,
-				651A71231CD408B0000B4091 /* ImageGridLayout.swift in Sources */,
+				651A71231CD408B0000B4091 /* AssetCollectionImageGridLayout.swift in Sources */,
 				65C7079A1CD78EF40013C43F /* PhotosDataSource.swift in Sources */,
 				651A71111CD40656000B4091 /* AlbumsCollectionSizeClass.swift in Sources */,
 				651A711B1CD407E1000B4091 /* AssetCollectionFlowLayout.swift in Sources */,
