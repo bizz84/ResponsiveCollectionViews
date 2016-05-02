@@ -56,9 +56,10 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
 
         if let firstPhotoName = album.first {
             
-            if let bundlePath = NSBundle.mainBundle().pathForResource(firstPhotoName, ofType: "jpg") {
-                cell.image = UIImage(contentsOfFile: bundlePath)
-            }
+            cell.image = UIImage(named: firstPhotoName)
+//            if let bundlePath = NSBundle.mainBundle().pathForResource(firstPhotoName, ofType: "jpg") {
+//                cell.image = UIImage(contentsOfFile: bundlePath)
+//            }
         }
     }
     
