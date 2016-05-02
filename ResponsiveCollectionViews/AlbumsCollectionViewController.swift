@@ -10,9 +10,15 @@ import UIKit
 
 class AlbumsCollectionViewController: CollectionViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    let AssetCollectionSegueIdentifier = "ShowAssets"
+
     var flowLayout: AlbumsCollectionFlowLayout!
     
     let albums = PhotosDataSource.sharedInstance.albums
+    
+    lazy var albumNames: [String] = {
+        return Array(self.albums.keys).sort() { $0 < $1 }
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +49,32 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
         
         collectionView.collectionViewLayout.invalidateLayout()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == AssetCollectionSegueIdentifier {
+            
+            if let indexPath = sender as? NSIndexPath {
+                
+                if let destinationVC = segue.destinationViewController as? AssetCollectionViewController {
+                    
+                    let albumName = albumNames[indexPath.row]
+                    let album = albums[albumName]!
+                    
+                    destinationVC.title = albumName
+                    destinationVC.albumPhotoFileNames = album
+                }
+            }
+        }
+    }
+
 
     private func updateCell(cell: AlbumCollectionViewCell, indexPath: NSIndexPath) {
         
-        let albumNames = Array(albums.keys).sort() { $0 < $1 }
-        let title = albumNames[indexPath.row]
-        let album = albums[title]!
+        let albumName = albumNames[indexPath.row]
+        let album = albums[albumName]!
         
-        cell.title = title
+        cell.title = albumName
         cell.count = album.count
         cell.sizeClass = AlbumsCollectionSizeClass(traitCollection: self.traitCollection)
 
@@ -83,4 +107,8 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
         return flowLayout.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAtIndexPath: indexPath)
     }
 
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        performSegueWithIdentifier(AssetCollectionSegueIdentifier, sender: indexPath)
+    }
 }
