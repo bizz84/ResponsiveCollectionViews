@@ -1,24 +1,91 @@
-# ResponsiveCollectionViews
+# Responsive Collection Views
 
-This demo project shows how to build the skeleton of a simple Photos app using collection views that register different cells for different size classes and update their layout when trait collection changes.
+Size classes are the the recommended way of making an iOS app responsive. While Interface Builder makes it possible to encode all layout information for various size classes without a single line of code, there are still cases where we need to switch between different layouts programmatically.
 
-## Preview
+One such case is when we want to update a collection view to update its layout and/or use different cell types as the trait collection changes at runtime.
 
-#### iPhone
+This demo project shows how to build a simplified version of the iOS Photos app, where the layout is updated when the user enables split view mode and changes the window size.
+
+## Requirements 
+The requirements of this simple app are:
+
+* A master view controller showing a list of albums
+* A detail view controller showing all the photos in a given album
+* The master view controller should display all the cells: 
+	* as a table-view style list on iPhone or iPad in compact width mode (split view enabled)
+	* as a multiple column grid on iPad in regular width mode (split view disabled)
+* The detail view controller should always display all the cells as a grid
+	* with zero section inset and 1pt spacing between cells on iPhone 
+	* with non-zero section inset and greater spacing between cells on iPad
+
+## Implementation
+
+The master view controller has a collection view with two types of cells:
+
+* **Compact**: table-view style cell with the image on the left hand and disclosure button on the right
+* **Regular**: grid style cell with labels below the main image
+
+We will deliberately name the reuse IDs for these cells `AlbumCollectionViewCell-Compact` and `AlbumCollectionViewCell-Regular`.
+
+<img src="images/ResponsiveCollectionViews-MasterVC.png" alt="Master view controller"/>
+
+We can then create an enumeration that will describe the cell types we have defined like this:
+
+```swift
+enum AlbumsCollectionSizeClass: String {
+    case Compact = "Compact"
+    case Regular = "Regular"
+    
+    init(traitCollection: UITraitCollection) {
+        
+        self = traitCollection.horizontalSizeClass == .Regular &&
+            traitCollection.verticalSizeClass == .Regular ? .Regular : .Compact
+    }
+}
+
+extension AlbumsCollectionSizeClass {
+    
+    var cellReuseID: String {
+        return "AlbumCollectionViewCell-\(self.rawValue)"
+    }
+}
+```
+
+This is so that our collection view `cellForItemAtIndexPath` delegate method can be defined as follows:
+
+```
+func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+    let sizeClass = AlbumsCollectionSizeClass(traitCollection: self.traitCollection)
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(sizeClass.cellReuseID, forIndexPath: indexPath) as! AlbumCollectionViewCell
+    
+    // load image into cell
+    updateCell(cell, indexPath: indexPath)
+    
+    return cell
+}
+
+```
+
+
+## Master View Controller
 
 <img src="screenshots/iPhone-MasterPortrait.jpg" alt="iPhone Master Portrait"/>
 <img src="screenshots/iPhone-MasterLandscape.jpg" alt="iPhone Master Landscape"/>
-<img src="screenshots/iPhone-DetailPortrait.jpg" alt="iPhone Detail Portrait"/>
-<img src="screenshots/iPhone-DetailLandscape.jpg" alt="iPhone Detail Landscape"/>
-
-#### iPad
 
 <img src="screenshots/iPad-MasterPortrait.jpg" alt="iPad Master Portrait"/>
 <img src="screenshots/iPad-MasterLandscape.jpg" alt="iPad Master Landscape"/>
 
-<img src="screenshots/iPad-MasterPortraitSplitRight.jpg" alt="iPad Master Portrait Split Right"/>
+<img src="screenshots/iPad-MasterPortrait.jpg" alt="iPad Master Portrait Split Right"/>
 <img src="screenshots/iPad-MasterLandscapeSplitRight.jpg" alt="iPad Master Landscape Split Right"/>
 <img src="screenshots/iPad-MasterLandscapeSplitMiddle.jpg" alt="iPad Master Landscape Split Middle"/>
+
+
+## Detail View Controller
+
+
+<img src="screenshots/iPhone-DetailPortrait.jpg" alt="iPhone Detail Portrait"/>
+<img src="screenshots/iPhone-DetailLandscape.jpg" alt="iPhone Detail Landscape"/>
 
 <img src="screenshots/iPad-DetailPortrait.jpg" alt="iPad Detail Portrait"/>
 <img src="screenshots/iPad-DetailLandscape.jpg" alt="iPad Detail Landscape"/>
