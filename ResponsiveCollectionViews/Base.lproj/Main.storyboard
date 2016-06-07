@@ -31,10 +31,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCollectionViewCell" id="4CN-uk-1Su" customClass="AlbumCollectionViewCell" customModule="ResponsiveCollectionViews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="250"/>
+                                        <rect key="frame" x="33.5" y="64" width="533" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="533" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8O8-yC-8Nv" userLabel="AlbumPreviewHolder~2">
@@ -153,7 +153,7 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="disclosure-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-cv-gEX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="disclosure-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-cv-gEX">
                                                     <rect key="frame" x="579" y="38" width="8" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="8" id="YWf-9y-Lw9"/>
@@ -245,14 +245,10 @@
                                             <constraint firstItem="H2a-CU-cfB" firstAttribute="top" secondItem="4CN-uk-1Su" secondAttribute="centerY" constant="5" id="ybJ-CG-EmX"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="H2a-CU-cfB" secondAttribute="bottom" constant="8" id="z7T-fw-wZG"/>
                                         </constraints>
-                                        <size key="customSize" width="600" height="250"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="iwT-Bt-v04"/>
                                                 <exclude reference="l6n-QZ-xrV"/>
-                                                <exclude reference="5TP-of-5jF"/>
-                                                <exclude reference="XTO-XY-hxh"/>
-                                                <exclude reference="cpg-a1-2sm"/>
                                                 <exclude reference="9nS-aO-397"/>
                                                 <exclude reference="Ggn-nf-8yf"/>
                                                 <exclude reference="YHK-pA-nfR"/>
@@ -266,34 +262,33 @@
                                                 <exclude reference="og6-ga-4lf"/>
                                                 <exclude reference="ybJ-CG-EmX"/>
                                                 <exclude reference="z7T-fw-wZG"/>
+                                                <exclude reference="XTO-XY-hxh"/>
+                                                <exclude reference="cpg-a1-2sm"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact">
                                             <mask key="constraints">
                                                 <include reference="iwT-Bt-v04"/>
-                                                <include reference="5TP-of-5jF"/>
-                                                <include reference="XTO-XY-hxh"/>
                                                 <include reference="9nS-aO-397"/>
                                                 <include reference="fKs-KC-QV1"/>
                                                 <include reference="mpc-PD-2Un"/>
                                                 <include reference="ybJ-CG-EmX"/>
+                                                <include reference="XTO-XY-hxh"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="iwT-Bt-v04"/>
-                                                <include reference="5TP-of-5jF"/>
-                                                <include reference="XTO-XY-hxh"/>
                                                 <include reference="9nS-aO-397"/>
                                                 <include reference="fKs-KC-QV1"/>
                                                 <include reference="mpc-PD-2Un"/>
                                                 <include reference="ybJ-CG-EmX"/>
+                                                <include reference="XTO-XY-hxh"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <exclude reference="l6n-QZ-xrV"/>
-                                                <include reference="cpg-a1-2sm"/>
                                                 <include reference="Ggn-nf-8yf"/>
                                                 <exclude reference="YHK-pA-nfR"/>
                                                 <include reference="ehe-Q6-aPg"/>
@@ -303,6 +298,7 @@
                                                 <include reference="f5i-uF-rsL"/>
                                                 <include reference="og6-ga-4lf"/>
                                                 <exclude reference="z7T-fw-wZG"/>
+                                                <exclude reference="cpg-a1-2sm"/>
                                             </mask>
                                         </variation>
                                         <connections>
