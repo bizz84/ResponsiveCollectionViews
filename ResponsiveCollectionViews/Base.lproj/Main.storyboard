@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yZe-CB-vA3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yZe-CB-vA3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -63,7 +63,6 @@
                                                     <constraints>
                                                         <constraint firstItem="LJH-7s-II1" firstAttribute="top" secondItem="8O8-yC-8Nv" secondAttribute="top" constant="1" id="7oE-hW-qnW"/>
                                                         <constraint firstAttribute="trailing" secondItem="LJH-7s-II1" secondAttribute="trailing" constant="1" id="Utd-yE-0hR"/>
-                                                        <constraint firstAttribute="width" constant="66" id="V90-bB-vsU"/>
                                                         <constraint firstAttribute="width" secondItem="8O8-yC-8Nv" secondAttribute="height" multiplier="1:1" id="itd-8F-6gf"/>
                                                         <constraint firstAttribute="bottom" secondItem="LJH-7s-II1" secondAttribute="bottom" constant="1" id="pjb-xD-TMC"/>
                                                         <constraint firstItem="LJH-7s-II1" firstAttribute="leading" secondItem="8O8-yC-8Nv" secondAttribute="leading" constant="1" id="suI-sp-Qx1"/>
@@ -94,7 +93,6 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="AOR-xR-0b1" secondAttribute="height" multiplier="1:1" id="F0D-dF-DLz"/>
-                                                        <constraint firstAttribute="width" constant="68" id="XOg-vn-1Z5"/>
                                                         <constraint firstItem="Ul6-RR-dlw" firstAttribute="top" secondItem="AOR-xR-0b1" secondAttribute="top" constant="1" id="abb-ar-NXb"/>
                                                         <constraint firstAttribute="bottom" secondItem="Ul6-RR-dlw" secondAttribute="bottom" constant="1" id="ipa-r3-IXb"/>
                                                         <constraint firstItem="Ul6-RR-dlw" firstAttribute="leading" secondItem="AOR-xR-0b1" secondAttribute="leading" constant="1" id="ymh-Yx-mDq"/>
@@ -126,7 +124,9 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="UMm-vn-vYf" secondAttribute="trailing" constant="1" id="CKH-vo-W77"/>
+                                                        <constraint firstAttribute="width" secondItem="nrc-4M-7JE" secondAttribute="height" multiplier="1:1" id="M0j-VC-VR7"/>
                                                         <constraint firstAttribute="bottom" secondItem="UMm-vn-vYf" secondAttribute="bottom" constant="1" id="Ps7-Y5-LWf"/>
+                                                        <constraint firstAttribute="width" constant="70" id="cjd-2l-kfn"/>
                                                         <constraint firstItem="UMm-vn-vYf" firstAttribute="top" secondItem="nrc-4M-7JE" secondAttribute="top" constant="1" id="ehS-jM-zyA"/>
                                                         <constraint firstItem="UMm-vn-vYf" firstAttribute="leading" secondItem="nrc-4M-7JE" secondAttribute="leading" constant="1" id="ll3-ba-ffi"/>
                                                     </constraints>
@@ -158,6 +158,8 @@
                                             <constraint firstItem="nrc-4M-7JE" firstAttribute="leading" secondItem="4CN-uk-1Su" secondAttribute="leading" constant="8" id="358-HW-RDO"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="3yx-cv-gEX" secondAttribute="trailing" constant="5" id="5TP-of-5jF"/>
                                             <constraint firstItem="Wm2-uA-Grj" firstAttribute="leading" secondItem="nrc-4M-7JE" secondAttribute="trailing" constant="18" id="9nS-aO-397"/>
+                                            <constraint firstItem="AOR-xR-0b1" firstAttribute="width" secondItem="nrc-4M-7JE" secondAttribute="width" constant="-2" id="VuK-PS-R1s"/>
+                                            <constraint firstItem="8O8-yC-8Nv" firstAttribute="width" secondItem="AOR-xR-0b1" secondAttribute="width" constant="-2" id="X63-va-9rK"/>
                                             <constraint firstItem="3yx-cv-gEX" firstAttribute="leading" secondItem="Wm2-uA-Grj" secondAttribute="trailing" constant="5" id="XTO-XY-hxh"/>
                                             <constraint firstItem="nrc-4M-7JE" firstAttribute="top" secondItem="4CN-uk-1Su" secondAttribute="top" constant="10" id="Xah-5Y-KPe"/>
                                             <constraint firstItem="8O8-yC-8Nv" firstAttribute="centerX" secondItem="nrc-4M-7JE" secondAttribute="centerX" id="ZLV-lx-X8m"/>
@@ -171,6 +173,18 @@
                                             <constraint firstItem="H2a-CU-cfB" firstAttribute="top" secondItem="4CN-uk-1Su" secondAttribute="centerY" constant="5" id="ybJ-CG-EmX"/>
                                         </constraints>
                                         <size key="customSize" width="600" height="90"/>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="iwT-Bt-v04"/>
+                                                <include reference="9nS-aO-397"/>
+                                                <include reference="fKs-KC-QV1"/>
+                                                <include reference="mpc-PD-2Un"/>
+                                                <include reference="ybJ-CG-EmX"/>
+                                                <include reference="5TP-of-5jF"/>
+                                                <include reference="XTO-XY-hxh"/>
+                                                <include reference="hPK-NM-UPe"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="countLabel" destination="H2a-CU-cfB" id="c3j-9h-sk6"/>
                                             <outlet property="imageView" destination="naO-PQ-fYd" id="m2c-Vi-Hnn"/>
