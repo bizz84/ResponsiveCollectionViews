@@ -33,7 +33,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        //self.contentView.translatesAutoresizingMaskIntoConstraints = false
         let backgroundColor = UIColor(white: 217.0/255.0, alpha: 1.0)
         imageView.backgroundColor = backgroundColor
         imageViewSub1.backgroundColor = backgroundColor
