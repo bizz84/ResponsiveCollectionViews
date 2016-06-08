@@ -1,13 +1,15 @@
 # Responsive Collection Views
 
-Size classes are the the recommended way of making an iOS app responsive. 
+#### [Accompanying slides here](http://www.slideshare.net/bizz84/responsive-ios-collection-views)
+
+Size classes are a powerful tool to complement Auto-Layout when making an iOS app responsive. 
 While we can encode all layout information for various size classes in Interface Builder without a single line of code, there are still cases where we need to switch between different layouts programmatically.
 
 One such case is when we want to update a collection view layout or use different cell types as the trait collection changes at runtime.
 
 This demo project shows how to build a simplified version of the iOS Photos app, which chooses the most appropriate layout as the user enables split view mode and changes the window size.
 
-## Requirements
+## Outline
 
 This simple app is composed of two screens:
 
