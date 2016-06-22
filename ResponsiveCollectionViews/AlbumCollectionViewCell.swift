@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-extension AlbumsCollectionSizeClass {
-    
-    var cellReuseID: String {
-        return "AlbumCollectionViewCell-\(self.rawValue)"
-    }
-}
-
 class AlbumCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private var imageView: UIImageView!
@@ -27,7 +20,9 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var titleLabel: UILabel!
     
     @IBOutlet private var countLabel: UILabel!
-    
+
+    @IBOutlet private var disclosureImageView: UIImageView!
+
     lazy var numberFormatter: NSNumberFormatter = {
         
         var numberFormatter = NSNumberFormatter()
@@ -38,13 +33,20 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //self.contentView.translatesAutoresizingMaskIntoConstraints = false
         let backgroundColor = UIColor(white: 217.0/255.0, alpha: 1.0)
         imageView.backgroundColor = backgroundColor
         imageViewSub1.backgroundColor = backgroundColor
         imageViewSub2.backgroundColor = backgroundColor
     }
-    
-    var sizeClass: AlbumsCollectionSizeClass!
+        
+    var sizeClass: AlbumsCollectionSizeClass! {
+        didSet {
+            titleLabel.textAlignment = sizeClass == .Compact ? .Left : .Center
+            countLabel.textAlignment = sizeClass == .Compact ? .Left : .Center
+            disclosureImageView.hidden = sizeClass == .Regular
+        }
+    }
     
     override var highlighted: Bool {
         didSet {

@@ -81,8 +81,7 @@ class AlbumsCollectionViewController: CollectionViewController, UICollectionView
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let sizeClass = AlbumsCollectionSizeClass(traitCollection: self.traitCollection)
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(sizeClass.cellReuseID, forIndexPath: indexPath) as! AlbumCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AlbumCollectionViewCell", forIndexPath: indexPath) as! AlbumCollectionViewCell
         
         updateCell(cell, indexPath: indexPath)
         
